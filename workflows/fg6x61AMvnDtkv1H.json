@@ -15,17 +15,6 @@
     },
     {
       "parameters": {},
-      "id": "3f27b3a6-d2f0-49ea-8e60-7d235a2ff247",
-      "name": "Execute Command",
-      "type": "n8n-nodes-base.executeCommand",
-      "typeVersion": 1,
-      "position": [
-        220,
-        380
-      ]
-    },
-    {
-      "parameters": {},
       "id": "7a225af7-7ad6-4310-b59a-1e882453fbe5",
       "name": "Execution Data",
       "type": "n8n-nodes-base.executionData",
@@ -45,25 +34,14 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        460,
-        620
+        660,
+        380
       ],
       "alwaysOutputData": false
     }
   ],
   "connections": {
     "When clicking ‘Test workflow’": {
-      "main": [
-        [
-          {
-            "node": "Execute Command",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Execute Command": {
       "main": [
         [
           {
@@ -90,7 +68,7 @@
     "executionOrder": "v1"
   },
   "triggerCount": 0,
-  "versionId": "f1007a3d-0fd0-443f-9d7e-3590e8354392",
+  "versionId": "2d82d1a4-2cb5-4735-927a-c40ead40226d",
   "owner": {
     "type": "team",
     "teamId": "h8A8dj9qa3wAf1CM",
