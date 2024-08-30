@@ -1,0 +1,99 @@
+{
+  "id": "fg6x61AMvnDtkv1H",
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "af74e9db-ccac-47fc-b7a3-4cce3dc22e63",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        0,
+        380
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "3f27b3a6-d2f0-49ea-8e60-7d235a2ff247",
+      "name": "Execute Command",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        220,
+        380
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "7a225af7-7ad6-4310-b59a-1e882453fbe5",
+      "name": "Execution Data",
+      "type": "n8n-nodes-base.executionData",
+      "typeVersion": 1,
+      "position": [
+        440,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "language": "python",
+        "pythonCode": "# Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor item in _input.all():\n  item.json.myNewField = 1\nreturn _input.all()"
+      },
+      "id": "ba77ad78-caf0-4562-9cff-0b05d8edee55",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        620
+      ],
+      "alwaysOutputData": false
+    }
+  ],
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command": {
+      "main": [
+        [
+          {
+            "node": "Execution Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execution Data": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "f1007a3d-0fd0-443f-9d7e-3590e8354392",
+  "owner": {
+    "type": "team",
+    "teamId": "h8A8dj9qa3wAf1CM",
+    "teamName": "asdfadsf"
+  }
+}
